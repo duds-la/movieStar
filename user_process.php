@@ -72,7 +72,8 @@
         //Receber dados do post
         $password = filter_input(INPUT_POST, "password");
         $confirmpassword = filter_input(INPUT_POST, "confirmpassword");
-        $id = filter_input(INPUT_POST, "id");
+        $userData = $userDao->verifyToken();
+        $id = $userData->id;
 
         if($password === $confirmpassword){
 
@@ -85,7 +86,7 @@
             $user->id = $id;
 
             $userDao->changePassword($user);
-            
+
 
         } else {
             $message->setMessage("Senhas nã são iguais!", "error", "index.php");
