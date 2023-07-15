@@ -1,6 +1,6 @@
 <?php
 
-class Movie {
+  class Movie {
 
     public $id;
     public $title;
@@ -8,18 +8,16 @@ class Movie {
     public $image;
     public $trailer;
     public $category;
-    public $lenght;
+    public $length;
     public $users_id;
 
     public function imageGenerateName() {
-        return bin2hex(random_bytes(60)) . ".jpg";
-      }
+      return bin2hex(random_bytes(60)) . ".jpg";
+    }
 
+  }
 
-}
-
-
-interface MovieDAOInterface {
+  interface MovieDAOInterface {
 
     public function buildMovie($data);
     public function findAll();
@@ -32,4 +30,4 @@ interface MovieDAOInterface {
     public function update(Movie $movie);
     public function destroy($id);
 
-}
+  }

@@ -3,6 +3,14 @@
 
   require_once("dao/MovieDAO.php");
 
+  // DAO dos filmes
+  $movieDao = new MovieDAO($conn, $BASE_URL);
+
+  $latestMovies = $movieDao->getLatestMovies();
+
+  $actionMovies = $movieDao->getMoviesByCategory("Ação");
+
+  $comedyMovies = $movieDao->getMoviesByCategory("Comédia");
 
 ?>
   <div id="main-container" class="container-fluid">

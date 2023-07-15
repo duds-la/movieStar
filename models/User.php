@@ -12,7 +12,7 @@
     public $token;
 
     public function getFullName($user) {
-      return $user->name . " " .  $user->lastname;
+      return $user->name . " " . $user->lastname;
     }
 
     public function generateToken() {
